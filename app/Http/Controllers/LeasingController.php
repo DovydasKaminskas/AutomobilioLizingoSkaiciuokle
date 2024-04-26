@@ -44,6 +44,7 @@ class LeasingController extends Controller
      */
     public function edit(leasing $leasing)
     {
+        $leasing = Leasing::first();
         return view('leasing.edit', compact('leasing'));
     }
 
