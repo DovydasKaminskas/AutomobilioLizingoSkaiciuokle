@@ -12,6 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('parameters', function (Blueprint $table) {
+            $table->id();
             $table->integer('min_time_period')->default(12);
             $table->integer('max_time_period')->default(90);
             $table->integer('min_amount')->default(10000);
