@@ -42,9 +42,9 @@ class LeasingController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(leasing $parameter)
+    public function edit(leasing $leasing)
     {
-        return view('leasing.edit');
+        return view('leasing.edit', compact('leasing'));
     }
 
     /**
@@ -64,7 +64,7 @@ class LeasingController extends Controller
 
         $leasing->update($request->all());
 
-        // redirect**
+        return redirect()->route('leasing.index');
     }
 
     /**

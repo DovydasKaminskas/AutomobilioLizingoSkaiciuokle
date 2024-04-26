@@ -12,3 +12,4 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::get('/leasing', [App\Http\Controllers\LeasingController::class, 'index'])->name('leasing.index');
 Route::get('/leasing/edit', [App\Http\Controllers\LeasingController::class, 'edit'])->name('leasing.edit');
+Route::post('/leasing/update', [App\Http\Controllers\LeasingController::class, 'update'])->name('leasing.update');
