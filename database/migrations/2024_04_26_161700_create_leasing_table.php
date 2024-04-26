@@ -18,6 +18,7 @@ return new class extends Migration
             $table->integer('min_amount')->default(10000);
             $table->integer('max_amount')->default(100000);
             $table->float('min_interest_rate')->default(0.0703);
+            $table->float('max_interest_rate')->default(0.08);
             $table->float('administration_fee')->default(200);
             $table->float('min_down_payment')->default(0.1);
             $table->timestamps();
