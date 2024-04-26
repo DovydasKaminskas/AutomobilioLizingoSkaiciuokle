@@ -34,7 +34,7 @@ class LeasingController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(leasing $parameter)
+    public function show(leasing $leasing)
     {
         //
     }
@@ -50,7 +50,7 @@ class LeasingController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, leasing $parameter)
+    public function update(Request $request, leasing $leasing)
     {
         $request->validate([
             'min_time_period' => 'required',
@@ -62,7 +62,7 @@ class LeasingController extends Controller
             'min_down_payment' => 'required',
         ]);
 
-        $parameter->update($request->all());
+        $leasing->update($request->all());
 
         // redirect**
     }
@@ -70,7 +70,7 @@ class LeasingController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(leasing $parameter)
+    public function destroy(leasing $leasing)
     {
         //
     }
