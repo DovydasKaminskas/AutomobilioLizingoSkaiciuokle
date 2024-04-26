@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class leasing extends Model
 {
     use HasFactory;
+    protected $table = 'leasing';
 
     protected $fillable = [
         'min_time_period',
@@ -15,7 +16,9 @@ class leasing extends Model
         'min_amount',
         'max_amount',
         'min_interest_rate',
+        'max_interest_rate',
         'administration_fee',
         'min_down_payment',
+        'max_down_payment'
     ];
 }
