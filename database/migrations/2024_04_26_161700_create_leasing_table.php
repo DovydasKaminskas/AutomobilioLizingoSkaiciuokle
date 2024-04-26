@@ -21,6 +21,7 @@ return new class extends Migration
             $table->float('max_interest_rate')->default(0.08);
             $table->float('administration_fee')->default(200);
             $table->float('min_down_payment')->default(0.1);
+            $table->float('max_down_payment')->default(0.8);
             $table->timestamps();
         });
     }
