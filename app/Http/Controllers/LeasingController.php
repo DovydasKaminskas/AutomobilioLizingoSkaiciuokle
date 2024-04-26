@@ -10,9 +10,10 @@ class LeasingController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(leasing $leasing)
     {
-       return view('leasing.index');
+        $leasing = Leasing::first();
+        return view('leasing.index', compact('leasing'));
     }
 
     /**
