@@ -59,6 +59,7 @@ class LeasingController extends Controller
             'max_amount' => 'required',
             'min_interest_rate' => 'required',
             'max_interest_rate' => 'required',
+
             'administration_fee' => 'required',
             'min_down_payment' => 'required',
         ]);
