@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('parameters', function (Blueprint $table) {
+        Schema::create('leasing', function (Blueprint $table) {
             $table->id();
             $table->integer('min_time_period')->default(12);
             $table->integer('max_time_period')->default(90);
@@ -29,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('parameters');
+        Schema::dropIfExists('leasing');
     }
 };

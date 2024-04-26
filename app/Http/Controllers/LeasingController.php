@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\parameter;
+use App\Models\leasing;
 use Illuminate\Http\Request;
 
-class ParameterController extends Controller
+class LeasingController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -34,7 +34,7 @@ class ParameterController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(parameter $parameter)
+    public function show(leasing $parameter)
     {
         //
     }
@@ -42,15 +42,15 @@ class ParameterController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(parameter $parameter)
+    public function edit(leasing $parameter)
     {
-        //
+        return view('leasing.edit');
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, parameter $parameter)
+    public function update(Request $request, leasing $parameter)
     {
         $request->validate([
             'min_time_period' => 'required',
@@ -70,7 +70,7 @@ class ParameterController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(parameter $parameter)
+    public function destroy(leasing $parameter)
     {
         //
     }
