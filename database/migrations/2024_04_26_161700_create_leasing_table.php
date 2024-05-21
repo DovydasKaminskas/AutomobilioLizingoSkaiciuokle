@@ -18,11 +18,12 @@ return new class extends Migration {
             $table->float('max_down_payment')->default(0.8);
             $table->integer('min_time_period')->default(12);
             $table->integer('max_time_period')->default(90);
-            $table->float('min_interest_rate')->default(0.0703);
+            $table->float('min_interest_rate')->default(0.0203);
             $table->float('max_interest_rate')->default(0.08);
             $table->float('administration_fee')->default(200);
             $table->timestamps();
         });
+        DB::table('leasing')->insert([[]]);
     }
 
     /**

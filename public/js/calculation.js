@@ -80,4 +80,8 @@ $("#priceInput, #priceInputSlider, #down_payment, #down_payment_percent, #timePe
     $("#leasing").val(leasing.toFixed(0));
 }).trigger('input');
 
+    /*$(document).ready(function() {
+        $("#priceInput").css("cssText", "width: 25% !important;");
+    });*/
+
 });
