@@ -9,7 +9,7 @@
                         <label id="priceLabel" class="form-label">Price with PVM, Euros</label>
                             <input type="range" class="form-range" value="{{$leasing->min_amount}}" min="{{$leasing->min_amount}}" max="{{$leasing->max_amount}}" aria-labelledby="priceLabel" id="priceInputSlider" step="100">
                         <div class="input-group" style="width:35%">
-                            <input type="number"  class="form-control w-25 d-inline-block" value="{{$leasing->min_amount}}" min="{{$leasing->min_amount}}" max="{{$leasing->max_amount}}" aria-labelledby="priceLabel" id="priceInput" step="100" >
+                            <input type="number"  class="form-control" value="{{$leasing->min_amount}}" min="{{$leasing->min_amount}}" max="{{$leasing->max_amount}}" aria-labelledby="priceLabel" id="priceInput" step="100" >
                             <span class="input-group-text">€</span>
                         </div>
                     </div>
@@ -23,8 +23,8 @@
                                 </div>
                             </div>
                             <div class="col">
-                                <div class="input-group" style="width:20%">
-                                    <input type="number" class="form-control" value="{{$leasing->min_down_payment * 100}}" min="{{$leasing->min_down_payment * 100}}" max="{{$leasing->max_down_payment * 100}}" id="down_payment_percent" aria-labelledby="paymentLabel" style="width:100%" step="1">
+                                <div class="input-group" style="width:60%">
+                                    <input type="number" class="form-control" value="{{$leasing->min_down_payment * 100}}" min="{{$leasing->min_down_payment * 100}}" max="{{$leasing->max_down_payment * 100}}" id="down_payment_percent" aria-labelledby="paymentLabel" step="1">
                                     <span class="input-group-text">%</span>
                                 </div>
                             </div>
@@ -34,7 +34,7 @@
                         <label id="periodLabel" for="time_period" class="form-label">Period</label>
                         <div class="input-group">
                             <input type="range" class="form-range" value="{{$leasing->min_time_period}}" min="{{$leasing->min_time_period}}" max="{{$leasing->max_time_period}}" id="timePeriodSlider" aria-labelledby="periodLabel">
-                            <div class="input-group" style="width:40%">
+                            <div class="input-group" style="width:45%">
                                 <input type="number" class="form-control" value="{{$leasing->min_time_period}}" min="{{$leasing->min_time_period}}" max="{{$leasing->max_time_period}}" id="timePeriod" aria-labelledby="periodLabel" style="width:20%">
                                 <span class="input-group-text">Months</span>
                             </div>
