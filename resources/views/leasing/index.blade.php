@@ -15,7 +15,7 @@
                                        aria-labelledby="priceLabel" id="priceInputSlider" step="100">
                                     </div>
                                     <div class="w-100"></div>
-                                    <div class="col-4">
+                                    <div class="col-5">
                                 <div class="input-group">
                                     <input type="number" class="form-control" value="{{$leasing->min_amount}}"
                                            min="{{$leasing->min_amount}}" max="{{$leasing->max_amount}}"
@@ -27,7 +27,7 @@
                             </div>
                             <div class="mb-4 row">
                                 <label id="paymentLabel" for="down_payment" class="form-label">Down Payment</label>
-                                    <div class="col-4">
+                                    <div class="col-5">
                                         <div class="input-group">
                                             <input type="number" class="form-control"
                                                    value="{{ $leasing->min_down_payment * $leasing->min_amount}}"
@@ -40,7 +40,7 @@
                                             <span class="input-group-text">€</span>
                                         </div>
                                     </div>
-                                    <div class="col-4">
+                                    <div class="col-5">
                                         <div class="input-group">
                                             <input type="number" class="form-control"
                                                    value="{{$leasing->min_down_payment * 100}}"
@@ -61,7 +61,7 @@
                                         </div>
                                     </div>
                                     <div class="w-100"></div>
-                                    <div class="col-4">
+                                    <div class="col-5">
                                             <div class="input-group">
                                                 <input type="number" class="form-control" value="{{$leasing->min_time_period}}"
                                                        min="{{$leasing->min_time_period}}" max="{{$leasing->max_time_period}}"
