@@ -61,26 +61,57 @@ class LeasingController extends Controller
     {
         $leasing = Leasing::first();
         $request->validate([
-            'min_amount' => 'required|numeric|max:'.$request->max_amount,
-            'max_amount' => 'required|numeric|min:'.$request->min_amount,
-            'min_down_payment' => 'required|numeric|max:'.$request->max_down_payment,
-            'max_down_payment' => 'required|numeric|min:'.$request->min_down_payment,
-            'min_time_period' => 'required|numeric|max:'.$request->max_time_period,
-            'max_time_period' => 'required|numeric|min:'.$request->min_time_period,
-            'min_interest_rate' => 'required|numeric|max:'.$request->max_interest_rate,
-            'max_interest_rate' => 'required|numeric|min:'.$request->min_interest_rate,
+            'min_amount' => 'required|numeric',
+            'max_amount' => 'required|numeric',
+            'min_down_payment' => 'required|numeric',
+            'max_down_payment' => 'required|numeric',
+            'min_time_period' => 'required|numeric',
+            'max_time_period' => 'required|numeric',
+            'min_interest_rate' => 'required|numeric',
+            'max_interest_rate' => 'required|numeric',
             'administration_fee' => 'required|numeric',
         ],
-        [
-            'min_amount.max' => 'The minimum amount must be less than the maximum amount.',
-            'max_amount.min' => 'The maximum amount must be greater than the minimum amount.',
-            'min_down_payment.max' => 'The minimum down payment must be less than the maximum down payment.',
-            'max_down_payment.min' => 'The maximum down payment must be greater than the minimum down payment.',
-            'min_time_period.max' => 'The minimum time period must be less than the maximum time period.',
-            'max_time_period.min' => 'The maximum time period must be greater than the minimum time period.',
-            'min_interest_rate.max' => 'The minimum interest rate must be less than the maximum interest rate.',
-            'max_interest_rate.min' => 'The maximum interest rate must be greater than the minimum interest rate.',
-        ]);
+            [
+                'min_amount.required' => 'The minimal price is required.',
+                'max_amount.required' => 'The maximal price is required.',
+                'min_down_payment.required' => 'The minimal down payment is required.',
+                'max_down_payment.required' => 'The maximal down payment is required.',
+                'min_time_period.required' => 'The minimal leasing period is required.',
+                'max_time_period.required' => 'The maximal leasing period is required.',
+                'min_interest_rate.required' => 'The minimal interest rate is required.',
+                'max_interest_rate.required' => 'The maximal interest rate is required.',
+                'administration_fee.required' => 'The administration fee is required.',
+                'min_amount.numeric' => 'The minimal price must be a number.',
+                'max_amount.numeric' => 'The maximal price must be a number.',
+                'min_down_payment.numeric' => 'The minimal down payment must be a number.',
+                'max_down_payment.numeric' => 'The maximal down payment must be a number.',
+                'min_time_period.numeric' => 'The minimal leasing period must be a number.',
+                'max_time_period.numeric' => 'The maximal leasing period must be a number.',
+                'min_interest_rate.numeric' => 'The minimal interest rate must be a number.',
+                'max_interest_rate.numeric' => 'The maximal interest rate must be a number.',
+                'administration_fee.numeric' => 'The administration fee must be a number.',
+
+            ]);
+        $request->validate([
+            'min_amount' => 'lte:max_amount',
+            'max_amount' => 'gte:min_amount',
+            'min_down_payment' => 'lte:max_down_payment',
+            'max_down_payment' => 'gte:min_down_payment',
+            'min_time_period' => 'lte:max_time_period',
+            'max_time_period' => 'gte:min_time_period',
+            'min_interest_rate' => 'lte:max_interest_rate',
+            'max_interest_rate' => 'gte:min_interest_rate',
+        ],
+            [
+                'min_amount.lte' => 'The minimal price must be less than or equal to the maximal price.',
+                'max_amount.gte' => 'The maximal price must be greater than or equal to the minimal price.',
+                'min_down_payment.lte' => 'The minimal down payment must be less than or equal to the maximal down payment.',
+                'max_down_payment.gte' => 'The maximal down payment must be greater than or equal to the minimal down payment.',
+                'min_time_period.lte' => 'The minimal leasing period must be less than or equal to the maximal leasing period.',
+                'max_time_period.gte' => 'The maximal leasing period must be greater than or equal to the minimal leasing period.',
+                'min_interest_rate.lte' => 'The minimal interest rate must be less than or equal to the maximal interest rate.',
+                'max_interest_rate.gte' => 'The maximal interest rate must be greater than or equal to the minimal interest rate.',
+            ]);
         $input = $request->all();
         $input['min_down_payment'] = $input['min_down_payment'] / 100;
         $input['max_down_payment'] = $input['max_down_payment'] / 100;
